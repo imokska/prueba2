@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogDeCafé</title>
+    <!--   PREFETCH   -->
+    <!-- el prefetch se utiliza para darel una mejor experiencia a usuario y sea mas rapido su navegacion prefetch va a cargar la siguiente pagina que mas visitas tendra el sitio web  -->
+    <link rel="prefetch " href="nosotros.html " as="document">
+     
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    
+    
+
+        <!-- ___________PRELOAD___________________-->
+        <!--la diferencia de preload a prefetch es que va a cargar los archivos para una mejor carga del sitio web y con eso se tendra un mejor rendimiento para la hora en que el usuario visite el sitio-->
+
+
+       <link rel="preload" href="css/normalize.css" as="style">
+       <link rel="stylesheet" href="css/normalize.css">
+       
+       <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" crossorigin="crossorigin" as="font">
+       <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+       <link rel="preload" href="css/style.css" as="style">
+       <link rel="stylesheet" href="css/style.css">
+       
+ 
+
+       <!-- TODO ESTO NOS VA A DAR MEJORAS EN EL PERFORMANCE EN LA CARGA DE LA PAGINA AL USUARIO EN LOS DISPOSITIVOS EN LOS CUALES SE HABRA LA PAGINA-->
+
+
+
+</head>
+<body>
+    <header class="header">
+        <div class="contenedor">
+            <div class="barra">
+                <a class="logo" href="index.html"><!--al hacer click en el logo se redirecionara a la pagina principal por eso es que se le pone el index.html -->
+                    <h1 class="logo__nombre no-margin centrar-texto">Blog<span class="logo__bold">DeCafé</span></h1><!--se asigna span por que DE CAFE estara en negritas a comparacion de BLOG y se le asigna la clase LOGO__BOLD  -->
+                </a>
+                <!--este seria el tercer bloque aqui se crearan tres enlaces  nosotros cursos y contacto-->
+            <nav class="navegacion">
+                <a href=" nosotros.html" class="navegacion__enlace">Nosotros</a>
+                <a href="cursos.html" class="navegacion__enlace">Cursos</a>
+                <a href="contacto.html" class="navegacion__enlace">Contacto</a>
+                </nav>
+            </div>
+        </div>
+        <div class="header__texto "> <!--esta clase pertenece al bloque header por eso tiene ese doble guion bajo al ser un elemento de ese bloque -->
+             <h2 class="no-margin">Blog de Café con consejos y cursos<!--todos los headers agregan algo de margen con esta clase se les va a quitar --></h2>
+                <p class="no-margin">Aprende de los Expertos con las mejores recetas y consejos!  </p><!--este parrafo tambien tendra la clase de no margin   -->
+             
+             
+        </div>
+
+    </header>
+    <div class="contenedor contenido-principal">
+        <main class="blog">
+            <h3>Nuestro Blog</h3>
+            <!--cuando se tiene un blog se tiene que colocar en una etiqueta llamada article -->
+            <article class="entrada"><!-- este seria un bloque con una entrada de blog-->
+                <!-- Se utiliza WEBP para las imagenes por que tienen un mejor sorporte para los archivos de imagenes con el cual se ahorra tiempos de carga y con esto se hace una mejor experiencia a la hora de visitar el sitio web se adjunta el JPG por que en algunos navegadores antiguos no se puede utilizar el formato  ñ .WEBP por lo cual si no carga uno carga el otro usando la compatibilidad del navegador  -->
+            <div class="entrada__imagen">
+                <picture>
+                    <source loading="lazy" srcset="img/blog1.webp" type="image/webp">
+                    <img loading="lazy" src="img/blog1.jpg" alt="imagen blog">
+                </picture>
+                
+            </div>
+            <div class="entrada__contenido">
+                <h4 class="no-margin">Tipos de Grano de Café</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus aperiam voluptatum, officia, facilis aut corporis expedita adipisci dignissimos blanditiis modi odio! Porro rem cum voluptatibus, modi deserunt corrupti minus velit.</p>
+                <a href="entrada.html" class="boton boton--primario">Leer Entrada</a>
+            </div>
+                 
+            </article>
+
+            <article class="entrada"><!-- este seria un bloque con una entrada de blog-->
+                <div class="entrada__imagen">
+                    <picture>
+                        <source loading="lazy" srcset="img/blog2.webp" type="image/webp">
+                        <img loading="lazy" src="img/blog2.jpg" alt="imagen blog">
+                    </picture>
+                </div>
+                <div class="entrada__contenido">
+                    <h4 class="no-margin">Tres Deliciosas Recetas de Cafe</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus aperiam voluptatum, officia, facilis aut corporis expedita adipisci dignissimos blanditiis modi odio! Porro rem cum voluptatibus, modi deserunt corrupti minus velit.</p>
+                    <a href="entrada.html" class="boton boton--primario">Leer Entrada</a>
+                </div>
+                     
+                </article>
+
+                <article class="entrada"><!-- este seria un bloque con una entrada de blog-->
+                    <div class="entrada__imagen"> <!--Se UTILIZA LAZY LOADING PARA QUE LAS IMAGENES A LA HORA DE ABRIR EL NAVEGADOR CARGUEN SOLO CUANDO EL USUARIO LAS VISUALIZE ESTO PARA DARLE UNA BUENA GESTION DE RECURSOS Y EL PERFORMANCE DE LAS APLICACIONES WEB AL SISTEMA -->
+                        <picture>
+                            <source loading="lazy" srcset="img/blog3.webp" type="image/webp">
+                            <img loading="lazy" src="img/blog3.jpg" alt="imagen blog">
+                        </picture>
+                      
+                    </div>
+                    <div class="entrada__contenido">
+                        <h4 class="no-margin">Beneficios del Café</h4>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus aperiam voluptatum, officia, facilis aut corporis expedita adipisci dignissimos blanditiis modi odio! Porro rem cum voluptatibus, modi deserunt corrupti minus velit.</p>
+                        <a href="entrada.html" class="boton boton--primario">Leer Entrada</a>
+                    </div>
+                         
+                    </article>
+
+                    
+        </main>
+            <aside class="sidebar">
+            <h3>Nuestro Cursos y Talleres</h3>  
+            <!--esta etiqueta llamada UL LISTA NO ORDENADA se utiliza para -->
+            <ul class="cursos no-padding">
+                <li class="widget-curso">
+                    <h4 class="no-margin">Tecnicas de Extraccion de Café</h4>
+                    <p class="widget-curso__label">Precio: 
+                        <span class="widget-curso__info">Gratis </span>
+                    </p>
+                    <p class="widget-curso__label">Cupo: 
+                        <span class="widget-curso__info">20</span>
+                    </p>
+                    <a href="entrada.html" class="boton boton--secundario">Mas Informacion</a>
+
+                </li>
+                <li class="widget-curso">
+                    <h4 class="no-margin">4 Recetas de Café para Principiantes</h4>
+                    <p class="widget-curso__label">Precio: 
+                        <span class="widget-curso__info">Gratis </span>
+                    </p>
+                    <p class="widget-curso__label">Cupo: 
+                        <span class="widget-curso__info">20</span>
+                    </p>
+                    <a href="entrada.html" class="boton boton--secundario">Mas Informacion</a>
+
+                </li>
+                
+            </ul>
+            </aside>
+        
+    </div>
+    <footer class="footer"><!--se le pone el footer para poder aplicarle el color negro y el cotenedor para centrarlo y que no se vaya a las orillas -->
+        <div class="contenedor">
+            <div class="barra">
+                <a class="logo" href="index.html"><!--al hacer click en el logo se redirecionara a la pagina principal por eso es que se le pone el index.html -->
+                    <h1 class="logo__nombre no-margin centrar-texto">Blog<span class="logo__bold">DeCafé</span></h1><!--se asigna span por que DE CAFE estara en negritas a comparacion de BLOG y se le asigna la clase LOGO__BOLD  -->
+                </a>
+                <!--este seria el tercer bloque aqui se crearan tres enlaces  nosotros cursos y contacto-->
+            <nav class="navegacion">
+                <a href=" nosotros.html" class="navegacion__enlace">Nosotros</a>
+                <a href="cursos.html" class="navegacion__enlace">Cursos</a>
+                <a href="contacto.html" class="navegacion__enlace">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+     <script src="js/modernizr.js"></script>
+</body>
+</html>

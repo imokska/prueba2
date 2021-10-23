@@ -1,0 +1,320 @@
+:root{
+    /*Se registran en los customs properties los elementos con los cuales se va a trabajar en este caso las fuentes y la paleta de colores */
+    /*Fuentes*/
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+    /*Colores*/
+    --primario: #784D3C ;
+    --gris: #e1e1e1;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+  html{
+      box-sizing: border-box;/* esto hace que el borde no afecte el ancho de nuestros elementos*/
+      font-size: 62.5%; /* 1 rem es igual a 10 pixeles esto tiene que ir en todos los proyectos como recomendacion del profesor  */
+  }
+
+  *, *:before, *,*:after{
+      box-sizing: inherit;/* Lo que hace inerit es heredar el objeto padre en este caso el html tiene la ventaja que si se utiliza en otro selector suele ser mas dinamico */
+  }
+  body{
+       font-family: var(--fuenteParrafos); /*El body llevara la fuente parrafos que seria open sans san serif*/
+        font-size: 1.6rem;
+         line-height: 2; /*un interlineado de 2*/
+  }
+
+  /* GLOBALES*/
+    .contenedor{
+          max-width: 120rem;
+            width: 90%;
+            width: min(90%, 120rem);/* lo que hace este min va a plicar el valor de estas dos que sea menor es decri son dos lineas o se puede hacer en una linea y el resultado seria el mismo */ 
+             margin: 0 auto;
+    }
+
+    a{
+        text-decoration: none; /* A todos los enlaces se les va a quitar el interlineado por eso es none en lugar de orderline*/
+        }
+
+    h1,h2,h3,h4{
+        font-family: var(--fuenteHeading); /*Todos los hs headins   van a llevar como fuente el heading*/   
+        line-height: 1.2;/* esto por que en algunos dispositivos mobiles se veia muy gruesa la letra*/
+
+    }
+    h1{ /* a todos se les va a asignar individualmente un tamaño de fuente*/
+          font-size: 4.8rem;
+    }
+    h2{
+        font-size: 4rem;
+    }
+    h3{
+        font-size: 3rem;
+    }
+    h4{
+        font-size: 2.8rem;
+    }
+    img{
+        max-width: 100%; /*Las imagenes van a tener un maxwidth del 100por ciento */
+    }
+
+    /*---------UTILIDADES------------------------------*/
+    .no-margin{
+     /*agregando esta clase podemos eliminar margenes segun requiramos */
+     margin:0;
+    }
+    .no-padding{
+         padding:0; /*hay elementos que agregan un padding automaticamente*/
+    }
+    .centrar-texto{
+          text-align: center; /*esto es para centrar el texto*/
+    }
+/*----------------------HEADER------------------------------*/
+/*Se utiliza la fincion WEBP para definir que se utiliza la imagen pero en el formato WEBP si es que el navegador es compatible */
+.webp .header{
+    background-image: url(../img/banner.webp);
+}
+/*En caso que no lo soporte se le agrega la clase no WEBP es decir que no lo soporta    ESTO SE PUEDE HACER GRACIAS A MODERNIZR*/
+.no-webp .header{
+    background-image: url(../img/banner.jpg);/*se manda a llamar a la imagen*/
+}
+.header{
+    background-image: url(../img/banner.jpg);
+    height: 60rem; /*se le dimensiona la altura  de la imagen*/
+    background-size: cover; /*todas las imagenes de fondo se repiten por lo cual se le pone esta linea*/
+    background-repeat: no-repeat;/* para que tome todo el espacio disponible se le pone esta linea */
+    background-position: center center;/* esto se utiliza para que al hacer la pagina mas pequeña la imagen fluya y se adapte al tamaño que el usuario le asigne  se le asigna "center,center" por que la imagen se le asigna la alineacion verticalmente y horizontalmente  cuando se otiliza background size cover usualmente se mantendra center center   */
+
+}
+.header__texto{
+    text-align: center ;/*esto para que este el texto centrado */
+     /*y todo el texto va a tener un color blanco con esta variable */
+     color: var(--blanco);/*se le asigna el color a el header en este caso el color blanco */
+     margin-top: 5rem;/*esto para tener algo de separacion  */
+
+}
+@media (min-width: 768px){
+    .header__texto{
+        margin-top: 15rem;
+         
+    }
+    
+}
+.barra{
+    padding-top: 4rem;
+
+}
+/*vamos a definir esa barra que contiene el bloque de logo y el bloque de navegacion*/
+@media (min-width: 768px){
+    .barra{
+        display: flex;
+        justify-content: space-between;/* esto se utiliza para alinear contenido horizontal uno de el lado derecho y el otro del lado izquierdo   */
+        align-items: center;/*align items para alinear verticalmente  */
+    }
+}
+.logo{
+    color: var(--blanco);/*el logo se le asigna un color blanco*/
+}  
+.logo__nombre{
+    font-weight: 400;/*esto le va a hacer en una letra mas delgada*/
+}
+.logo__bold{
+    font-weight: 700;/*esto le va a hacer en una letra mas gruesa que el logo nombre*/     
+}
+@media (min-width: 768px){/*se le pone este media Query por que al hacer mas grande la pagina se mantienen los tres (nosnotros cursos y contactos uno debajo del otro por la orden display block)*/
+   .navegacion{
+        display: flex;/*con esto se colocan uno frente al otro a lo horizontal a la hora de hacer mas grande la pagina o ala hora de verlo en algin dispositivo con pantalla mas grande */
+         /*se le pone un gap de 2 rem para que no esten juntos y tengan separacion */
+         gap: 2rem;
+          
+   }  
+    
+}
+.navegacion__enlace{
+      display: block;/*esto es para que los elementos no esten uno junto al otro si no uno debajo del otro*/
+        text-align: center;/*para que este centrada horizontalmente*/
+         font-size: 1.8rem;/*tamaño de el texto*/
+          color: var(--blanco); /*utilizamos nuestra variable de blanco*/
+}
+@media (min-width: 768px){/*esto para un dispositivo no movil es decir en una pantalla mayor a 768 pixeles*/
+    .contenido-principal{
+        display: grid;
+        grid-template-columns: 2fr 1fr; /*de tres partes la primer parte toma dos terceras partes y el otro toma una de esas tres partes */
+        column-gap: 4rem;
+
+
+    }
+    
+}
+.entrada{
+    border-bottom: 1px solid var(--gris); /* primero se pasa el ancho del border "1px" el tipo del border  "SOLID"y el color "VAR(--GRIS)"esto se usa para separar una entrada de otra y que no queden juntas se utiliza BOTTOM para que la separacion sea unicamente en la parte inferior si se le pusiera solo BORDER seria un border en todas las direcciones se puede utilizar BORDER LEFT O RIGHT si solo se quisuiera tener un espacio a la derecha y a la izquierda  */
+    margin-bottom: 2rem;/*para poder visualizar el borde que le asignamos  */ 
+}
+.entrada:last-of-type{ /*con esto le decimos que en la ultima entrada le quite el border ya que no se necesita*/
+    border: none;
+    margin-bottom: 0;
+}
+.boton{
+    display: block;/*esto para que en un dispositivo mobvil tome todo el espacio disponible*/
+    font-family: var(--fuenteHeading);/*para utilizar la fuente que declaramos arriba */
+    color: var(--blanco);
+    text-align: center;/*vamos a alinearlo horizontalmente*/
+    padding: 1rem 3rem;/*1 rem arriba y abajo 3 rem izquierda y derecha*/
+    font-size: 1.8rem;
+    text-transform: uppercase;/*para que sea en mayusculas */
+    font-weight: 700;/*para que sea en negritas*/
+    margin-bottom: 2rem;/*para que haya separacion donde se utilize este boton haya separacion hacia abajo*/
+    border: none;
+
+}
+@media (min-width: 768px){/*este media query por que al hacer grande la pagina el boton no cambia se queda como si estuviera en vista de mobil esto para que sea responsive */
+    .boton{
+    /*inline si va a repetar el width y el margin por eso se utiliza*/
+    display: inline-block;
+    }
+}
+.boton:hover{
+     cursor: pointer;
+     
+}
+
+.boton--primario{
+    background-color: var(--negro);/*este color es del boton */
+
+}
+.boton--secundario{
+    background-color: var(--primario);
+
+}
+.cursos{
+    list-style: none; /*esto le quitara la viñetas · */
+
+}
+.widget-curso{ /*viene siendo este el blog*/
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+
+
+}
+.widget-curso, .curso:last-of-type{ /*esto por si agregan mas cursos siempre tomara el ultimo que se agrege y a ese le quitara el border y margin */
+    border: none;
+    margin-bottom: 0;
+
+}
+
+.widget-curso__label, .curso__label{
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+
+
+}
+.widget-curso__info, .curso__info{
+    font-weight: normal;
+     
+}
+.widget-curso__label,.curso__label,
+ .widget-curso__info,.curso__info{
+    font-size: 2rem; 
+}
+.footer{
+    background-color: var(--negro);
+    padding-bottom: 3rem; /*para tener algo de hacia adentro dela barra */
+    /*para tener algo de separacion con el elemento de arriba */
+    margin-top: 4rem;
+
+}
+/*------------SOBRE NOSOTROS--------------------------*/
+@media (min-width: 768px){
+    .sobre-nosotros{
+        display:flex;
+        justify-content: space-between;
+        gap:2rem;
+    }
+
+/*$$$$$$$$$$$$$$$$$$$$CURSOS-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+      .curso{
+        padding: 3rem 0;
+        border-bottom: 1px solid var(--gris);
+    
+    }
+    @media (min-width:  768px){
+        .curso{
+            display:grid;
+            grid-template-columns:1fr 2fr;
+            column-gap: 2rem;
+    
+        }
+        
+    }
+    .widget-curso:last-of-type{ /*esto por si agregan mas cursos siempre tomara el ultimo que se agrege y a ese le quitara el border y margin */
+    border: none;
+    margin-bottom: 0;
+
+}
+    .curso:last-of-type{
+        border: none;
+    
+    }
+    .sobre-nosotros__texto{
+        flex:0 0 calc(50% - 1rem);
+
+    }
+    .sobre-nosotros__imagen{
+        flex:0 0 calc(50% - 1rem);
+
+    }
+    
+    .sobre-nosotros{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+    /*.sobre-nosotros__imagen, .sobre-nosotros__texto{
+        flex-basis: 50%;/* con flex basis se tiene acceso a la version corta por que tambien se puede hacer con width : 50%;*/
+
+
+    /*.sobre-nosotros
+        display: grid;
+        grid-template-columns: repeat (2, 1fr);
+        column-gap: 2rem;
+
+    }*/
+
+    /*$$$$$$$$$$$$$$$$$$$CONTACTO$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+.contacto-bg{
+    background-image: url(../img/contacto.jpg);
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.formulario{
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;/*si se le pusiera 5 rem seria hacia abajo pero al ponerle -5rem toma el valor negativo y hace que se obtenga movimiento inverso en este caso hacia arriba AUTO va a ser de lado derecho hacia abajo va a ser cero y de lado izquiero va a ser auto  */
+     width: 95%; /*por que no toma todo el espacio dispobible*/
+     padding: 5rem;
+}   
+.campo{
+    display:flex;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}   
+
+.campo__label{
+    flex: 0 0 9rem;
+    text-align: right;
+    padding-right: 2rem;/*esto no es necesario si tenemos un gap pero por compatibilidad se puede usar para darle la separacion a lo que es el texto y las cajas de texto */
+}
+
+.campo__field{
+    flex: 1;
+    border: 1px solid  var(--gris);
+    overflow: hidden;
+} 
+
+.campo__field--textarea{
+    height: 200px;
+
+}

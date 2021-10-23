@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../../Proyectos de Udemy Desarrollo Web"
+		},
+		{
+			"path": "../css"
+		},
+		{
+			"path": "../img"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Proyectos de Udemy Desarrollo Web"
+	}
+}
